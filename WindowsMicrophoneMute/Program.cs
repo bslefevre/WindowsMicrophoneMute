@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Threading;
 using Windows.UI.Notifications;
 using WindowsMicrophoneMuteLibrary;
+using CUE.NET;
+using CUE.NET.Devices.Generic.Enums;
 
 namespace WindowsMicrophoneMute
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        public const string ApplicationId = "Microphone mute settings";
+
+        private static void Main()
         {
             var micMute = new WindowsMicMute();
 
@@ -23,7 +28,23 @@ namespace WindowsMicrophoneMute
 
             var micStatus = (micMute.IsMicMuted ? string.Empty : "un") + "muted";
 
+            CueSettingsSdk(micMute.IsMicMuted);
+
             ToastNotification("Mic is " + micStatus, micStatus);
+        }
+
+        private static void CueSettingsSdk(bool isMicMuted)
+        {
+            var color = isMicMuted ? Color.Red : Color.Green;
+            CueSDK.Initialize();
+            CueSDK.UpdateMode = UpdateMode.Manual;
+            var keyboard = CueSDK.KeyboardSDK;
+            if (CueSDK.IsInitialized && keyboard != null)
+            {
+                keyboard[CorsairLedId.Mute].Color = color;
+                keyboard[CorsairLedId.Mute].IsLocked = true;
+                keyboard.Update();
+            }
         }
 
         private static void ToastNotification(string message, string image)
@@ -44,12 +65,12 @@ namespace WindowsMicrophoneMute
                     Console.WriteLine(args.ErrorCode);
                 };
 
-                ToastNotificationManager.CreateToastNotifier("Microphone settings")
+                ToastNotificationManager.CreateToastNotifier(ApplicationId)
                     .Show(toast);
 
                 Thread.Sleep(2000);
 
-                ToastNotificationManager.CreateToastNotifier("Microphone settings")
+                ToastNotificationManager.CreateToastNotifier(ApplicationId)
                     .Hide(toast);
             }
             catch (Exception exception)

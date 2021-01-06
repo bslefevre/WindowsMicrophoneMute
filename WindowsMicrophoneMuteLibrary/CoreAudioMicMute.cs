@@ -26,7 +26,7 @@ namespace WindowsMicrophoneMuteLibrary
             }
         }
 
-        public bool IsMicMuted => MicrophoneDeviceList.First().AudioEndpointVolume.Mute;
+        public bool IsMicMuted => MicrophoneDeviceList.Any(x => x.AudioEndpointVolume.Mute);
 
         public void SetMute(bool mute)
         {
