@@ -28,7 +28,14 @@ namespace WindowsMicrophoneMute
 
             var micStatus = (micMute.IsMicMuted ? string.Empty : "un") + "muted";
 
-            CueSettingsSdk(micMute.IsMicMuted);
+            try
+            {
+                CueSettingsSdk(micMute.IsMicMuted);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
 
             ToastNotification("Mic is " + micStatus, micStatus);
         }
