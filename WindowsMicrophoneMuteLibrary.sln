@@ -15,26 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TO_COPY_FILES", "TO_COPY_FILES", "{7C3E2E04-6B2D-47C2-B01F-EA1602FE8453}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{874F6D2E-3261-4398-8B3F-6FF9687EED96}"
-	ProjectSection(SolutionItems) = preProject
-		TO_COPY_FILES\Resources\muted.png = TO_COPY_FILES\Resources\muted.png
-		TO_COPY_FILES\Resources\unmuted.png = TO_COPY_FILES\Resources\unmuted.png
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x64", "x64", "{F20C5963-1741-4C83-854C-520A4AF6D118}"
-	ProjectSection(SolutionItems) = preProject
-		TO_COPY_FILES\x64\CUESDK.dll = TO_COPY_FILES\x64\CUESDK.dll
-		TO_COPY_FILES\x64\CUESDK_2015.dll = TO_COPY_FILES\x64\CUESDK_2015.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x86", "x86", "{12F33683-F4F4-4846-BF68-BC24561DF8B5}"
-	ProjectSection(SolutionItems) = preProject
-		TO_COPY_FILES\x86\CUESDK.dll = TO_COPY_FILES\x86\CUESDK.dll
-		TO_COPY_FILES\x86\CUESDK_2015.dll = TO_COPY_FILES\x86\CUESDK_2015.dll
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,12 +46,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{7C3E2E04-6B2D-47C2-B01F-EA1602FE8453} = {DAF88C99-4F7B-4161-A7F2-18BFC9D2D6E8}
-		{874F6D2E-3261-4398-8B3F-6FF9687EED96} = {7C3E2E04-6B2D-47C2-B01F-EA1602FE8453}
-		{F20C5963-1741-4C83-854C-520A4AF6D118} = {7C3E2E04-6B2D-47C2-B01F-EA1602FE8453}
-		{12F33683-F4F4-4846-BF68-BC24561DF8B5} = {7C3E2E04-6B2D-47C2-B01F-EA1602FE8453}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6EF5B57-6566-4C18-9461-18E70A60C2FE}
