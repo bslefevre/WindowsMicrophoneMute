@@ -57,11 +57,13 @@ namespace WindowsMicrophoneMute
         private static void ToastNotification(string message, string image)
         {
             var toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
-            var stringElements = toastXml.GetElementsByTagName("text");
-            stringElements.Item(0).AppendChild(toastXml.CreateTextNode(message));
 
             var imagePath = $"file:///{Path.Combine(Environment.CurrentDirectory, "Resources", image + ".png")}";
             var imageElements = toastXml.GetElementsByTagName("image");
+
+            var stringElements = toastXml.GetElementsByTagName("text");
+            stringElements.Item(0).AppendChild(toastXml.CreateTextNode(message));
+
             imageElements[0].Attributes.GetNamedItem("src").NodeValue = imagePath;
 
             try

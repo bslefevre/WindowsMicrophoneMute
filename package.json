@@ -1,0 +1,19 @@
+{
+  "name": "windowsmicrophonemute",
+  "version": "1.0.0",
+  "description": "When you're able to use iCue than you can map a key to the `.exe` as an application.\r You'll need to add the following folders to `C:\\Windows\\SysWOW64` or `C:\\Program Files (x86)\\Corsair\\CORSAIR iCUE Software`:\r - Resources\r - x64\r - x86",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bslefevre/WindowsMicrophoneMute.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bslefevre/WindowsMicrophoneMute/issues"
+  },
+  "homepage": "https://github.com/bslefevre/WindowsMicrophoneMute#readme"
+}
